@@ -28,9 +28,4 @@ public class RegistrationModel {
   @ManyToOne
   @JoinColumn(name = "course_id")
   private CourseModel course;
-
-//  @Column(length = 50, nullable = false)
-//  private String student;
-//  @Column(length = 50, nullable = false)
-//  private String course;
 }
