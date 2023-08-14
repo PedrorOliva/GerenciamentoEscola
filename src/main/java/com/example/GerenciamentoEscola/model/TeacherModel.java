@@ -24,7 +24,7 @@ public class TeacherModel {
 
   @ManyToOne
   @JoinColumn(name = "course_id")
-  private CourseModel courseModel;
+  private CourseModel course;
 
   @Column(nullable = false)
   private Double wage;

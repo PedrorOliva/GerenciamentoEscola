@@ -21,7 +21,7 @@ public class StudentModel {
   private String name;
   @Column(length = 2, nullable = false)
   private Integer age;
-  @Column(length = 15, nullable = false)
+  @Column(length = 25, nullable = false)
   private String email;
 
 }
