@@ -84,6 +84,13 @@ public class StudentControllerTest {
         .andExpect(jsonPath("$.email").value("student@email.com"));
   }
 
+  @DisplayName("Find student when ID not found")
+  @Test
+  public void testFindStudentIdNotFound() throws Exception {
+    mockMvc.perform(get("/api/student/{id}", 1L))
+        .andExpect(status().isNotFound());
+  }
+
   @DisplayName("Register new student")
   @Test
   public void testCreateStudent() throws Exception {
@@ -112,5 +119,12 @@ public class StudentControllerTest {
 
     mockMvc.perform(delete("/api/student/{id}", 1L))
         .andExpect(status().isOk());
+  }
+
+  @DisplayName("Delete a student when ID not found")
+  @Test
+  public void testDeleteStudentNotFound() throws Exception {
+    mockMvc.perform(delete("/api/student/{id}", 1L))
+        .andExpect(status().isNotFound());
   }
 }

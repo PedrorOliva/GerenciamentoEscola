@@ -98,4 +98,11 @@ public class TeacherControllerTest {
     mockMvc.perform(delete("/api/teacher/{id}", 1L))
         .andExpect(status().isOk());
   }
+
+  @DisplayName("Delete a teacher when ID not found")
+  @Test
+  public void testDeleteTeacherIdNotFoun() throws Exception {
+    mockMvc.perform(delete("/api/teacher/{id}", 1L))
+        .andExpect(status().isNotFound());
+  }
 }
