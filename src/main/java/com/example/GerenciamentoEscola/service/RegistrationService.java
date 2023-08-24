@@ -13,7 +13,7 @@ import java.util.Optional;
 public class RegistrationService {
   @Autowired
   RegistrationRepository registrationRepository;
-
+  
   public RegistrationModel create(RegistrationModel registrationModel) {
     return registrationRepository.save(registrationModel);
   }
@@ -24,7 +24,7 @@ public class RegistrationService {
   public Optional<RegistrationModel> findOneRegistration(Long id) {
     return registrationRepository.findById(id);
   }
-
+  
   public RegistrationModel updateCourse(Long id, RegistrationModel registrationModel) {
     RegistrationModel registration = registrationRepository.findById(id).get();
     if(registrationModel.getCourse() != null) {
