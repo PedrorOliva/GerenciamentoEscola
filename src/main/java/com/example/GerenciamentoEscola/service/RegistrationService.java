@@ -14,7 +14,7 @@ public class RegistrationService {
   @Autowired
   RegistrationRepository registrationRepository;
   
-  public RegistrationModel create(RegistrationModel registrationModel) {
+  public RegistrationModel createRegistration(RegistrationModel registrationModel) {
     return registrationRepository.save(registrationModel);
   }
   public List<RegistrationModel> findAllRegistrations() {

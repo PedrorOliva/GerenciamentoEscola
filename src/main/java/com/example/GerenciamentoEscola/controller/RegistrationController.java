@@ -25,7 +25,7 @@ public class RegistrationController {
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public RegistrationModel newRegister(@RequestBody RegistrationModel registrationModel){
-    return registrationService.create(registrationModel);
+    return registrationService.createRegistration(registrationModel);
   }
 
   @PatchMapping(path = "/{id}")
